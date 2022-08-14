@@ -3,7 +3,6 @@
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -44,18 +43,22 @@
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="RUX-co-skJ">
                                 <rect key="frame" x="20" y="409" width="374" height="21"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Fogot your name?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9yM-b3-Hp9">
-                                        <rect key="frame" x="0.0" y="0.33333333333331439" width="190.66666666666666" height="20.333333333333332"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" name="AccentColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fogot your password?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ff1-pe-8yp">
-                                        <rect key="frame" x="205.66666666666663" y="0.33333333333331439" width="168.33333333333337" height="20.333333333333332"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" name="AccentColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cne-j5-dCw">
+                                        <rect key="frame" x="0.0" y="0.0" width="179.66666666666666" height="21"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Fogot your Name?"/>
+                                        <connections>
+                                            <action selector="fogotName" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qjn-Jb-ShK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E1H-nP-18b">
+                                        <rect key="frame" x="194.66666666666663" y="0.0" width="179.33333333333337" height="21"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Fogot your Pass?"/>
+                                        <connections>
+                                            <action selector="fogotPass" destination="BYZ-38-t0r" eventType="touchUpInside" id="Oxc-Ho-kLa"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="RUX-co-skJ" secondAttribute="height" multiplier="374:21" id="lYn-Db-3nA"/>
@@ -74,8 +77,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="Password" destination="euc-OY-bbG" id="dIo-LT-3VW"/>
-                        <outlet property="UsenName" destination="5r3-la-lTy" id="1qO-KX-xtW"/>
+                        <outlet property="passwordText" destination="euc-OY-bbG" id="dIo-LT-3VW"/>
+                        <outlet property="userNameText" destination="5r3-la-lTy" id="1qO-KX-xtW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -106,7 +109,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Log out"/>
                                 <connections>
-                                    <action selector="Logout" destination="Bae-ov-i5U" eventType="touchUpInside" id="gTl-j2-MAY"/>
+                                    <segue destination="w2k-UD-6ge" kind="unwind" unwindAction="unwindSegue:" id="7K6-N3-nNf"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcom, " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xUb-M3-SB0">
@@ -130,18 +133,16 @@
                     </view>
                     <connections>
                         <outlet property="HiLabel" destination="deN-bv-QE2" id="0qA-QZ-j50"/>
-                        <outlet property="WelcomeUser" destination="xUb-M3-SB0" id="u6i-5Q-ycY"/>
+                        <outlet property="welcomeUser" destination="xUb-M3-SB0" id="u6i-5Q-ycY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vZx-1L-LNh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="w2k-UD-6ge" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="771.01449275362324" y="85.59782608695653"/>
         </scene>
     </scenes>
     <resources>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

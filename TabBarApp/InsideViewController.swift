@@ -9,19 +9,23 @@ import UIKit
 
 class InsideViewController: UIViewController {
 
-    @IBOutlet var WelcomeUser: UILabel!
+    @IBOutlet var welcomeUser: UILabel!
     @IBOutlet var HiLabel: UILabel!
     
+    var welcomUservalue: String!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        welcomeUser.text = welcomUservalue
+        
+        
+       // WelcomeUser.text = "Welcom" + (textFieldName.userNameText.text ?? "")
         HiLabel.text = "👋"
 
     }
     
     
-    @IBAction func Logout() {
-        dismiss(animated: true)
-    }
+    
     
 }

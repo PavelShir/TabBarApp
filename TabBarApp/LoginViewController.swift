@@ -12,6 +12,8 @@ class LoginViewController: UIViewController {
     @IBOutlet var passwordText: UITextField!
     @IBOutlet var userNameText: UITextField!
     
+    let userName = "Lika"
+    let pass = "Money"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,13 +26,17 @@ class LoginViewController: UIViewController {
       
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super .touchesBegan(touches, with: event)
+    }
+    
     @IBAction func fogotName() {
-        showAlert(with: "OOPS!", and: "Your name is Lika 👧🏻")
+        showAlert(with: "OOPS!", and: "Your name is \(userName) 👧🏻")
         return
     }
     
     @IBAction func fogotPass() {
-        showAlert(with: "OOPS!", and: "Your pass is Money 💰")
+        showAlert(with: "OOPS!", and: "Your pass is \(pass) 💰")
         return
     }
     
@@ -41,6 +47,20 @@ class LoginViewController: UIViewController {
         passwordText.text = ""
         userNameText.text = ""
     }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "LoginScreen" {
+            if userNameText.text != userName || passwordText.text != pass {
+                showAlert(with: "Login or Password is incorrect", and: "Please, enter correct Login and Password")
+                passwordText.text = ""
+                return false
+            } else {
+               print("OK")
+            }
+        }
+        return true
+    }
+    
 
 }
 

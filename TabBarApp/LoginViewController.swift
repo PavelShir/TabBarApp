@@ -25,29 +25,17 @@ class LoginViewController: UIViewController {
         insideVC.welcomUservalue = "Welcom " + (userNameText.text ?? "")
       
     }
-    
+ /*
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super .touchesBegan(touches, with: event)
+       
+        if let touch = touches.first {
+            if touch.view == self.view{
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
     }
-    
-    @IBAction func fogotName() {
-        showAlert(with: "OOPS!", and: "Your name is \(userName) 👧🏻")
-        return
-    }
-    
-    @IBAction func fogotPass() {
-        showAlert(with: "OOPS!", and: "Your pass is \(pass) 💰")
-        return
-    }
-    
-    @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {
-        
-   //    guard let insideVC = segue.destination as? InsideViewController else {return}
-      
-        passwordText.text = ""
-        userNameText.text = ""
-    }
-    
+ */
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if identifier == "LoginScreen" {
             if userNameText.text != userName || passwordText.text != pass {
@@ -61,7 +49,22 @@ class LoginViewController: UIViewController {
         return true
     }
     
-
+ // MARK: - Button actions
+    
+    @IBAction func fogotName() {
+        showAlert(with: "OOPS!", and: "Your name is \(userName) 👧🏻")
+        return
+    }
+    
+    @IBAction func fogotPass() {
+        showAlert(with: "OOPS!", and: "Your pass is \(pass) 💰")
+        return
+    }
+    
+    @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {
+        passwordText.text = ""
+        userNameText.text = ""
+    }
 }
 
 // MARK: - Alerts

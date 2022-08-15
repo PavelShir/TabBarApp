@@ -7,7 +7,7 @@
 
 import UIKit
 
-class InsideViewController: UIViewController {
+final class InsideViewController: UIViewController {
 
     @IBOutlet var welcomeUser: UILabel!
     @IBOutlet var HiLabel: UILabel!
@@ -17,7 +17,7 @@ class InsideViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        welcomeUser.text = welcomUservalue
+        welcomeUser.text = "Welcom, " + welcomUservalue
         
         
        // WelcomeUser.text = "Welcom" + (textFieldName.userNameText.text ?? "")

@@ -7,35 +7,24 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+final class LoginViewController: UIViewController {
 
     @IBOutlet var passwordText: UITextField!
     @IBOutlet var userNameText: UITextField!
     
-    let userName = "Lika"
-    let pass = "Money"
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-       
-    }
+    private let userName = "Lika"
+    private let pass = "Money"
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
        guard let insideVC = segue.destination as? InsideViewController else { return }
-        insideVC.welcomUservalue = "Welcom " + (userNameText.text ?? "")
-      
+        insideVC.welcomUservalue = userName
     }
- /*
+ 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super .touchesBegan(touches, with: event)
-       
-        if let touch = touches.first {
-            if touch.view == self.view{
-                self.dismiss(animated: true, completion: nil)
-            }
-        }
+        view.endEditing(true)
     }
- */
+ 
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if identifier == "LoginScreen" {
             if userNameText.text != userName || passwordText.text != pass {

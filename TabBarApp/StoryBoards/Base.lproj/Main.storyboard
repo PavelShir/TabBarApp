@@ -35,7 +35,7 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Login"/>
                                         <connections>
-                                            <segue destination="Bae-ov-i5U" kind="presentation" identifier="LoginScreen" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="K9t-cT-lEE"/>
+                                            <segue destination="uVz-b6-dXg" kind="presentation" identifier="LoginScreen" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="K9t-cT-lEE"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -85,10 +85,10 @@
             </objects>
             <point key="canvasLocation" x="18.840579710144929" y="85.59782608695653"/>
         </scene>
-        <!--Inside View Controller-->
+        <!--User-->
         <scene sceneID="PDw-H5-niH">
             <objects>
-                <viewController id="Bae-ov-i5U" customClass="InsideViewController" customModule="TabBarApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Bae-ov-i5U" customClass="UserViewController" customModule="TabBarApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nt6-kH-TcI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -131,6 +131,7 @@
                             <constraint firstItem="xUb-M3-SB0" firstAttribute="top" secondItem="fjl-AN-PW5" secondAttribute="top" constant="130" id="xpc-E0-vJ2"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="User" image="person.fill" catalog="system" id="y5p-ZD-QzM" userLabel="User"/>
                     <connections>
                         <outlet property="HiLabel" destination="deN-bv-QE2" id="0qA-QZ-j50"/>
                         <outlet property="welcomeUser" destination="xUb-M3-SB0" id="u6i-5Q-ycY"/>
@@ -139,10 +140,110 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vZx-1L-LNh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="w2k-UD-6ge" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="771.01449275362324" y="85.59782608695653"/>
+            <point key="canvasLocation" x="761" y="834"/>
+        </scene>
+        <!--Lika-->
+        <scene sceneID="4Rs-gX-QCN">
+            <objects>
+                <viewController id="DbX-hk-1ad" customClass="DetailsViewController" customModule="TabBarApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wVB-nM-0mP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тут пока ничего нет" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l4c-mA-tkr">
+                                <rect key="frame" x="72.666666666666686" y="350" width="269" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DNe-nG-nAN">
+                                <rect key="frame" x="164" y="272" width="67" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <segue destination="RhH-4L-xzf" kind="show" id="ame-2Z-QHI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Dc5-i4-6fS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="l4c-mA-tkr" firstAttribute="centerY" secondItem="wVB-nM-0mP" secondAttribute="centerY" id="vam-fm-FEF"/>
+                            <constraint firstItem="l4c-mA-tkr" firstAttribute="centerX" secondItem="wVB-nM-0mP" secondAttribute="centerX" id="wPm-6A-w5W"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Lika" id="WRP-Lf-v5x" userLabel="Additional info"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HIA-T1-8c2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2299" y="834"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="3gR-kV-XDY">
+            <objects>
+                <viewController id="RhH-4L-xzf" customClass="InfoViewController" customModule="TabBarApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nGy-av-4c5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="sV9-Hy-dnZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="96J-Ck-e2W"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O0e-qv-ENT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3058" y="834"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="ns7-BU-Jl3">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="uVz-b6-dXg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ahL-KB-XjV">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Bae-ov-i5U" kind="relationship" relationship="viewControllers" id="ZOB-4F-Nhu"/>
+                        <segue destination="05x-Mi-SXl" kind="relationship" relationship="viewControllers" id="5VJ-Ch-6Vn"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Kw-vm-q00" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="762" y="86"/>
+        </scene>
+        <!--Lika-->
+        <scene sceneID="8mu-V3-fhv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="05x-Mi-SXl" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Details" image="lineweight" catalog="system" id="g0r-t5-H7h"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Lika" id="nw3-mB-mf2">
+                        <barButtonItem key="backBarButtonItem" title="Lika" id="whw-mJ-Bhb"/>
+                    </navigationItem>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1Ta-nY-DRA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="DbX-hk-1ad" kind="relationship" relationship="rootViewController" id="a4g-q3-kmU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EId-jh-PJS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1552" y="834"/>
         </scene>
     </scenes>
     <resources>
+        <image name="lineweight" catalog="system" width="128" height="110"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

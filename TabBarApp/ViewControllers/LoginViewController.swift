@@ -12,12 +12,19 @@ final class LoginViewController: UIViewController {
     @IBOutlet var passwordText: UITextField!
     @IBOutlet var userNameText: UITextField!
     
-    private let userName = "Lika"
-    private let pass = "Money"
+    private let userName = "1"
+    private let pass = "1"
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-       guard let insideVC = segue.destination as? InsideViewController else { return }
-        insideVC.welcomUservalue = userName
+       guard let tabBarVC = segue.destination as? UITabBarController else { return }
+        guard let viewControllers = tabBarVC.viewControllers else { return }
+        
+        for viewController in viewControllers {
+            if let userVC = viewController as? UserViewController {
+                userVC.welcomUservalue = userName
+            }
+        }
+        
     }
  
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -50,7 +57,7 @@ final class LoginViewController: UIViewController {
         return
     }
     
-    @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {
+    @IBAction func unwindSegue(_ segue: UITabBarController) {
         passwordText.text = ""
         userNameText.text = ""
     }

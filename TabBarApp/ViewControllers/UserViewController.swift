@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class InsideViewController: UIViewController {
+final class UserViewController: UIViewController {
 
     @IBOutlet var welcomeUser: UILabel!
     @IBOutlet var HiLabel: UILabel!
@@ -18,9 +18,6 @@ final class InsideViewController: UIViewController {
         super.viewDidLoad()
         
         welcomeUser.text = "Welcom, " + welcomUservalue
-        
-        
-       // WelcomeUser.text = "Welcom" + (textFieldName.userNameText.text ?? "")
         HiLabel.text = "👋"
 
     }

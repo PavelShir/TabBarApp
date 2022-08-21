@@ -11,9 +11,12 @@ class DetailsViewController: UIViewController {
 
     @IBOutlet var personImage: UIImageView!
     
+    var personFoto: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        personImage.image = UIImage(named: personFoto ?? "")
 
     }
     

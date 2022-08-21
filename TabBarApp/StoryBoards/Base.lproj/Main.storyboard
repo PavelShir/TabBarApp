@@ -166,18 +166,18 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ad1-dI-k1r">
-                                <rect key="frame" x="87" y="98" width="240" height="128"/>
+                                <rect key="frame" x="87" y="60" width="240" height="128"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="Ad1-dI-k1r" secondAttribute="height" multiplier="15:8" id="86N-CX-1w9"/>
+                                    <constraint firstAttribute="width" secondItem="Ad1-dI-k1r" secondAttribute="height" multiplier="15:8" id="c1n-j8-bCV"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Dc5-i4-6fS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Ad1-dI-k1r" firstAttribute="top" secondItem="Dc5-i4-6fS" secondAttribute="top" constant="54" id="Lkq-t1-tuK"/>
-                            <constraint firstItem="Dc5-i4-6fS" firstAttribute="trailing" secondItem="Ad1-dI-k1r" secondAttribute="trailing" constant="87" id="o4l-4T-IHg"/>
-                            <constraint firstItem="Ad1-dI-k1r" firstAttribute="leading" secondItem="Dc5-i4-6fS" secondAttribute="leading" constant="87" id="u6L-Ri-bVX"/>
+                            <constraint firstItem="Ad1-dI-k1r" firstAttribute="leading" secondItem="Dc5-i4-6fS" secondAttribute="leading" constant="87" id="7X2-LI-L9a"/>
+                            <constraint firstItem="Dc5-i4-6fS" firstAttribute="trailing" secondItem="Ad1-dI-k1r" secondAttribute="trailing" constant="87" id="Fdf-uh-0LW"/>
+                            <constraint firstItem="Ad1-dI-k1r" firstAttribute="top" secondItem="Dc5-i4-6fS" secondAttribute="top" constant="16" id="UAe-Cn-npE"/>
                             <constraint firstItem="l4c-mA-tkr" firstAttribute="centerY" secondItem="wVB-nM-0mP" secondAttribute="centerY" id="vam-fm-FEF"/>
                             <constraint firstItem="l4c-mA-tkr" firstAttribute="centerX" secondItem="wVB-nM-0mP" secondAttribute="centerX" id="wPm-6A-w5W"/>
                         </constraints>

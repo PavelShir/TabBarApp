@@ -12,7 +12,7 @@ final class LoginViewController: UIViewController {
     @IBOutlet var passwordText: UITextField!
     @IBOutlet var userNameText: UITextField!
     
-    private let person = Person(userName: "Lika", userSurname: "G", userGender: .women, userAge: 35, userProfession: .hr, image: "person foto")
+    private let person = Person(userName: "Pavel", userSurname: "Sh", userGender: .man, userAge: 38, userProfession: .programmer, image: "person foto")
     private let user = UserLogin(user: "1", password: "1")
     
     //private let userName = "1"
@@ -24,11 +24,11 @@ final class LoginViewController: UIViewController {
         
         for viewController in viewControllers {
             if let userVC = viewController as? UserViewController {
-                userVC.welcomUservalue = user.user
+                userVC.welcomUservalue = person.userName
             } else if let navigateVC = viewController as? UINavigationController {
                 guard let detailsVC = navigateVC.topViewController as? DetailsViewController else { return }
-                detailsVC.title = user.user
-                detailsVC.personImage.image = UIImage(named: person.image)
+                detailsVC.title = person.userName
+                detailsVC.personFoto = person.image
             }
             
         }

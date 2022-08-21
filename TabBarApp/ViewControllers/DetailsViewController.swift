@@ -9,8 +9,11 @@ import UIKit
 
 class DetailsViewController: UIViewController {
 
+    @IBOutlet var personImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
     }
     

@@ -12,7 +12,8 @@ struct Person {
     let userAge: Int
     let userProfession: Profession
     let image: String
-}
+    }
+
 
 struct UserLogin {
     let user: String
